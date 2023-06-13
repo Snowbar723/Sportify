@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>網站註冊頁面</title>
+  <style>
+    /* 頁面樣式設計 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f0f3;
+    }
+
+    .container {
+      max-width: 400px;
+      height: 750px;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #322C3F;
+      border-radius: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container .form-container input{
+    border: none;
+    outline: none;
+    background: #473952;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    
+    input[type="text"], input[type="date"], input[type="submit"]{
+    display: block;
+    width: 63%;
+    margin: 0 auto; /* 左右外邊距設為auto，讓元素水平置中 */
+    margin-bottom: 15px;
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    color: whitesmoke;
+    }   
+
+    input[type="submit"] {
+      display: block;
+      width: 280px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      padding: 13px;
+      font-size: 16px;
+      border-radius: 25px;
+      background-color: #664D9A;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: #f00;
+      margin-bottom: 10px;
+    }
+
+    .image{
+      display: block;  
+      margin: 0 auto;
+      margin-top: 30px;
+      height: 80px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    }
+
+    #select {
+    display: block;
+    width: 70%;
+    margin: 0 auto; /* 左右外邊距設為auto，讓元素水平置中 */
+    margin-bottom: 15px;
+    padding: 13px;
+    font-size: 16px;
+    border-radius: 25px;
+
+    color:  #fffC; /*文字顏色*/
+    background-color:#473952; /*選單背景顏色*/
+   } 
+  </style>
+</head>
+<body>
+  <div class="container">
+     <img class="image" src="logo.png"> <br><br>
+    <div class="form-container">
+      <form action="infoEx.php" method="post">
+      <label><input type="text" name="realname" placeholder="真實姓名                               (必填)" required></label>
+      <label><input type="text" name="nickname" placeholder="暱稱                                      (必填)" required></label>
+      <label><input type="text" name="phone" placeholder="電話                                      (必填)" required></label>
+      <label><input type="text" name="address" placeholder="住址                                      (必填)" required></label>
+      <label><input type="text" name="school" placeholder="學校                                      (必填)" required></label>
+      <label><input type="text" name="major" placeholder="科系"></label>
+      <label><input type="text" name="birthday" placeholder="出生年/月/日" onfocus="(this.type='date')"></label>
+      <label>
+        <select name="gender" id=select>
+        <option value="0" disabled selected>性別</option>
+        <option value="male">男性</option>
+        <option value="female">女性</option>
+      </select></label>
+      <label><input type="text" name="sport" placeholder="喜歡的運動                           (必填)" required></label>
+    </div><br>
+      <input type="submit" value="送出">
+    </form>
+  </div>
+</body>
+</html>

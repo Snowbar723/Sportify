@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!--編碼設定-->
+  <title>個人檔案</title>
+  <link rel="stylesheet" type="text/css" >
+</head>
+
+<style>
+  .container {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+.name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.bio {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.info {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+.info li {
+  margin-bottom: 10px;
+}
+
+.info li strong {
+  font-weight: bold;
+}
+
+.post-heading {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.post {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.image{
+      display: block;  
+      margin: 0 auto;
+      margin-top: 120px;
+      height: 80px;
+    }
+    
+</style>
+<body>
+  <div class="container">
+    <div class="image">
+        <img class="image" src="大頭貼.jpg" > 
+    </div>
+    <h1 class="name">你的名字</h1>
+    <p class="bio">個人介紹</p>
+    <ul class="info">
+      <!-- 添加其他個人信息 -->
+    </ul>
+
+    <h2 class="post-heading">貼文</h2>
+    <div class="post">
+      <div class="post-header">
+        <img src="貼文圖.png" alt="Profile Picture" class="post-profile-picture">
+        <div class="post-author">作者名字</div>
+        <div class="post-date">貼文日期</div>
+      </div>
+      <div class="post-content">
+        <p>貼文內容</p>
+      </div>
+    </div>
+    <!-- 添加其他貼文 -->
+  </div>
+</body>
+</html>
