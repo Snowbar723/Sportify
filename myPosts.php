@@ -382,7 +382,7 @@ b_button {
           }
         }
 
-        $sql = "SELECT DISTINCT event.event_id AS 'id', event.sport AS 'sport', event.location AS 'location', event.people_Needed AS 'number', event.event_Time AS 'time', event.state AS 'state' FROM event WHERE (event.state = 'ING' OR event.state = 'OK') AND event.user_id = '$userId'";
+        $sql = "SELECT DISTINCT event.event_id AS 'id', event.sport AS 'sport', event.location AS 'location', event.people_Needed AS 'number', event.event_Time AS 'time', event.state AS 'state' FROM event WHERE event.user_id = '$userId' ORDER BY event.event_Time DESC";
 
         $stat = mysqli_stmt_init($conn);
 
@@ -431,7 +431,7 @@ b_button {
 
           for (var i = 0; i < postsData.length; i++){
             var post = postsData[i];
-            console.log(post.state);
+            //console.log(post.state);
 
             var statContainer = document.createElement('div');
             statContainer.className = 'profile-stat';
@@ -457,6 +457,12 @@ b_button {
               line2Element.textContent = "媒合" + post.number + "人" + ", 未選隊友";
             }else if(post.state == 'OK') {
               line2Element.textContent = "媒合" + post.number + "人" + ", 已選隊友";
+            }else if(post.state == 'success') {
+              line2Element.textContent = "媒合" + post.number + "人" + ", 已完成活動";
+              statContainer.style.backgroundColor = '#587062';
+            }else if(post.state == 'fail') {
+              line2Element.textContent = "媒合" + post.number + "人" + ", 流團";
+              statContainer.style.backgroundColor = '#8a6e6eff';
             }
             centerContainer.appendChild(line2Element);
 
@@ -489,6 +495,7 @@ b_button {
               };
               buttonElement.id = post.id;
               buttonElement.textContent = "選隊友";
+              rightContainer.appendChild(buttonElement);
             }else if(post.state == 'OK'){
               var buttonElement = document.createElement('b_button');
               buttonElement.onclick = function() {
@@ -510,9 +517,10 @@ b_button {
               };
               buttonElement.id = post.id;
               buttonElement.textContent = "看隊友";
+              rightContainer.appendChild(buttonElement);
             }
             
-            rightContainer.appendChild(buttonElement);
+            
             statContainer.appendChild(rightContainer);
 
             document.getElementById('ps').appendChild(statContainer);

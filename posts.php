@@ -318,7 +318,7 @@
         <!--抓資料回來OK，但無法顯示在對應位置-->
         <?php
 
-        $sql = "SELECT event.event_id AS 'id', event.sport AS 'sport', event.location AS 'location', event.people_Needed AS 'number', event.ability AS 'ability', event.event_Time AS 'time', user.user_Nickname AS 'author', user.gender AS 'gender',event.user_id AS 'posterId', event.state AS 'state' FROM event LEFT JOIN user ON event.user_id = user.user_id WHERE event.state = 'ING' OR event.state = 'OK'  ORDER BY event.post_Time DESC;";
+        $sql = "SELECT event.event_id AS 'id', event.sport AS 'sport', event.location AS 'location', event.people_Needed AS 'number', event.ability AS 'ability', event.event_Time AS 'time', user.user_Nickname AS 'author', user.gender AS 'gender',event.user_id AS 'posterId', event.state AS 'state' FROM event LEFT JOIN user ON event.user_id = user.user_id WHERE event.state = 'ING' OR event.state = 'OK'  ORDER BY event.event_Time ASC;";
 
         $stat = mysqli_stmt_init($conn);
 
