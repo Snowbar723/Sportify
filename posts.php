@@ -572,13 +572,14 @@
         hiddenContainer.style.borderBottomRightRadius = '24px'; 
         hiddenContainer.style.borderTopRightRadius = '24px'; 
         hiddenContainer.style.height = '170px';
-        hiddenContainer.style.width = '115px'; 
+        hiddenContainer.style.width = '110px'; 
         hiddenContainer.style.padding = '10px'; 
         hiddenContainer.style.backgroundColor = '#ffffff';
         hiddenContainer.style. position = 'relative';
-        hiddenContainer.style.left = '260px';
-        hiddenContainer.style.bottom = '177px';
+        hiddenContainer.style.left = '250px';
+        hiddenContainer.style.bottom = '185px';
         hiddenContainer.style.overflowY = 'scroll';
+        //hiddenContainer.style.whiteSpace = 'pre';
         
         for(var j = 0; j < inLineData.length; j++){
           var inLine = inLineData[j];

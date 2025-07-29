@@ -24,7 +24,7 @@
 		die("Connection error: " . mysqli_connect_error());
 	}
 	
-	$sql = "UPDATE user SET user_Name=?, user_Nickname=?, gender=?, sport_Prefer=?, phone=?, adress=?, major=?, birthday=? WHERE user_Acc =?";
+	$sql = "UPDATE user SET user_Name=?, user_Nickname=?, gender=?, sport_Prefer=?, phone=?, adress=?, school=?, major=?, birthday=? WHERE user_Acc =?";
 	
 	$stat = mysqli_stmt_init($conn);
 
@@ -33,7 +33,7 @@
 	}
 
 	//Bind
-	mysqli_stmt_bind_param($stat, "sssssssss", $realname, $nickname, $gender, $sport, $phone, $address, $major, $birthday, $_SESSION['Acc']);
+	mysqli_stmt_bind_param($stat, "ssssssssss", $realname, $nickname, $gender, $sport, $phone, $address, $school, $major, $birthday, $_SESSION['Acc']);
 
 	mysqli_stmt_execute($stat);
 	

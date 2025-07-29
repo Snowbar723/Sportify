@@ -7,7 +7,7 @@
 	$location = $_POST['location'];
 	$number = $_POST['players'];
 	$ability = $_POST['ability'];
-	$other = $_POST['memo'];
+	//$other = $_POST['memo'];
 	$postTime = $_POST['postTime'];
 
 	//echo($postTime);
@@ -27,7 +27,7 @@
 		die("Connection error: " . mysqli_connect_error());
 	}
 
-	$sql = "INSERT INTO event(user_id, sport, post_Time, event_Time, location, people_Needed, ability, memo) VALUES(?,?,?,?,?,?,?,?)";
+	$sql = "INSERT INTO event(user_id, sport, post_Time, event_Time, location, people_Needed, ability, state) VALUES(?,?,?,?,?,?,?,'ING')";
 
 	$stat = mysqli_stmt_init($conn);
 
@@ -36,7 +36,7 @@
 	}
 
 	//Bind
-	mysqli_stmt_bind_param($stat, "ssssssss", $_SESSION['id'], $sport, $postTime, $time, $location, $number, $ability, $memo);
+	mysqli_stmt_bind_param($stat, "sssssss", $_SESSION['id'], $sport, $postTime, $time, $location, $number, $ability);
 
 	mysqli_stmt_execute($stat);
 

@@ -22,7 +22,7 @@
 
 	if(isset($_GET['name'])){
 		if($_GET['name'] == "plus"){
-			$sql = "INSERT INTO queue(event_id, waiting_id) VALUES (?,?);";
+			$sql = "INSERT INTO queue(event_id, waiting_id, state) VALUES (?,?,'waiting');";
 		}else if($_GET['name'] == "minus"){
 			$sql = "DELETE FROM queue WHERE event_id =? AND waiting_id =?;";
 		}
